@@ -32,10 +32,6 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-.inactive {
-  display: none;
-}
-
 a {
   display: block;
 }
@@ -60,6 +56,11 @@ nav a {
 
 .mobile-menu-icon {
   display: none;
+
+  border: none;
+
+  background-color: var(--white);
+  cursor: pointer;
 }
 
 .left-side {
@@ -175,6 +176,78 @@ nav a {
   color: var(--hospital-green);
 }
 
+/* Mobile menu */
+
+.mobile-menu {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 32px;
+  height: 100vh;
+
+  background-color: var(--white);
+}
+
+.close-icon {
+  display: flex;
+  justify-content: end;
+
+  cursor: pointer;
+}
+
+.mobile-menu h1 {
+  margin-bottom: 36px;
+
+  font-size: var(--lg);
+  text-transform: uppercase;
+}
+
+.lista {
+  list-style: none;
+}
+
+.mobile-menu__categories li,
+.mobile-menu__orders li {
+  margin-bottom: 36px;
+}
+
+.mobile-menu__orders {
+  border-top: 1px solid var(--very-light-pink);
+  padding-top: 36px;
+}
+
+.lista a {
+  margin-bottom: 24px;
+
+  font-weight: bold;
+
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.mobile-menu__account li {
+  margin-bottom: 4px;
+}
+
+.mobile-menu__account a {
+  font-size: var(--sm);
+  font-weight: 400;
+}
+
+.mobile-menu__account li:last-child a {
+  color: var(--hospital-green);
+}
+
+/* Helpers */
+
+.inactive {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .mobile-menu-icon {
     display: block;
@@ -189,6 +262,16 @@ nav a {
   }
 
   .right-side .account {
+    display: none;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-menu {
     display: none;
   }
 }
