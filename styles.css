@@ -244,13 +244,12 @@ nav a {
   color: var(--hospital-green);
 }
 
-/* my shopping cart */
+/* Aside (shopping cart & product detail) */
 
-.product-description {
+aside {
   position: absolute;
   top: 60px;
   right: 0;
-  bottom: 0;
 
   display: flex;
   flex-direction: column;
@@ -259,9 +258,12 @@ nav a {
   box-shadow: -2px 0px 2px 0px hsla(0, 0%, 0%, 0.122);
   padding: 12px 8px;
   width: 384px;
+  height: calc(100% - 60px);
 
   background-color: var(--white);
 }
+
+/* my shopping cart */
 
 .shopping-cart__header {
   display: flex;
@@ -381,6 +383,94 @@ nav a {
   align-items: center;
 }
 
+/* Product details */
+
+.product-details {
+  justify-content: space-around;
+
+  padding: 0 16px 16px 16px;
+}
+
+.product-details .close-button {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+
+  box-shadow: 0px 0px 8px rgba(128, 128, 128, 0.247);
+  background-color: var(--white);
+}
+
+.product-details .close-button:hover {
+  cursor: pointer;
+}
+
+.product-details .image-container {
+  display: flex;
+  justify-content: center;
+
+  margin: 12px 0;
+  border-radius: 16px;
+  width: 100%;
+  height: 50%;
+
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.product-info p:nth-child(1) {
+  margin-bottom: 8px;
+
+  font-size: var(--lg);
+  font-weight: bold;
+}
+
+.product-info p:nth-child(2) {
+  margin-bottom: 24px;
+
+  font-size: var(--lg);
+
+  color: var(--very-light-pink);
+}
+
+.product-info p:nth-child(3) {
+  margin-bottom: 28px;
+
+  font-size: var(--md);
+
+  color: var(--very-light-pink);
+}
+
+.primary-button {
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 48px;
+
+  font-size: var(--md);
+  font-weight: bold;
+
+  background-color: var(--hospital-green);
+  color: var(--white);
+
+  cursor: pointer;
+}
+
+.add-to-cart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: var(--md);
+}
+
 /* Products list */
 
 .main-container {
@@ -470,7 +560,7 @@ nav a {
     display: none;
   }
 
-  .product-description {
+  aside {
     width: 100%;
   }
 

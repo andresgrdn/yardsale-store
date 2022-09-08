@@ -4,7 +4,7 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const menuHamIcon = document.querySelector('.mobile-menu-icon');
 const mobileMenuIcon = document.querySelector('.close-icon');
 const shoppingCartButton = document.querySelector('.cart-icon');
-const shoppingCart = document.querySelector('.product-description');
+const shoppingCart = document.querySelector('.shopping-cart');
 const cardsContainer = document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
@@ -76,23 +76,26 @@ productsList.push({
   price: 150,
   image: 'https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw04b3c19c/images/600000/606028.jpg?sfrm=jpg',
 })
-
-/*
-<div class="product-card" >
-  <img src="" alt="">
-
-  <div class="controls">
-    <p class="product-card__description">
-      <span class="product-card__price">$ 120,00</span>
-      <span class="product-card__name">Bike</span>
-    </p>
-
-    <figure class="product-card__icon">
-      <img src="./assets/icons/bt_add_to_cart.svg" alt="">
-    </figure>
-  </div>
-</div>
-*/
+productsList.push({
+  name: 'Table',
+  price: 150,
+  image: 'https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw04b3c19c/images/600000/606028.jpg?sfrm=jpg',
+})
+productsList.push({
+  name: 'Table',
+  price: 150,
+  image: 'https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw04b3c19c/images/600000/606028.jpg?sfrm=jpg',
+})
+productsList.push({
+  name: 'Table',
+  price: 150,
+  image: 'https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw04b3c19c/images/600000/606028.jpg?sfrm=jpg',
+})
+productsList.push({
+  name: 'Table',
+  price: 150,
+  image: 'https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw04b3c19c/images/600000/606028.jpg?sfrm=jpg',
+})
 
 function renderProducts(arr) {
   for (const product of arr) {
