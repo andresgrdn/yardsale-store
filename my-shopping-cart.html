@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --very-light-pink: #C7C7C7;
+      --text-input-field: #F7F7F7;
+      --hospital-green: #ACD9B2;
+      --white: #FFFFFF;
+      --black: #000000;
+      --dark: #232830;
+
+      --sm: 14px;
+      --md: 16px;
+      --lg: 18px;
+
+      --card-size: 232px;
+      --add-to-chart-icon-size: 40px;
+
+      --mobile-card-size: 152px;
+      --mobile-add-to-chart-icon-size: 36px;
+
+      --product-img-size: 100px;
+
+      --padding-products-cards: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .product-description {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      box-shadow: -2px 0px 2px 0px hsla(0, 0%, 0%, 0.122);
+      padding: 12px 8px;
+      width: 384px;
+
+      background-color: var(--white);
+    }
+
+    .shopping-cart__header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .shopping-cart__back-icon {
+      --icon-size: 24px;
+
+      display: block;
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+
+      background: no-repeat center/contain url('./assets/icons/vector.svg');
+    }
+
+    .shopping-cart__title {
+      font-size: var(--lg);
+      font-weight: bold;
+
+      color: var(--black);
+    }
+
+    .shopping-cart__items {
+      overflow-y: auto;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      margin-bottom: 16px;
+      width: 100%;
+
+      color: var(--very-light-pink);
+    }
+
+    .item__img {
+      border-radius: 20px;
+      width: 76px;
+      height: 76px;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .item__description {
+      font-size: var(--sm);
+      font-weight: 400;
+    }
+
+    .item__price {
+      margin-left: auto;
+
+      font-size: var(--md);
+      font-weight: 700;
+
+      color: var(--dark);
+    }
+
+    .close-icon {
+      --icon-size: 12px;
+
+      display: block;
+
+      background: no-repeat center/contain url('./assets/icons/close.svg');
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
+
+    .shopping-cart__total {
+      display: flex;
+      align-items: center;
+
+      margin-top: auto;
+      border-radius: 10px;
+      padding-inline: 14px;
+      min-height: 76px;
+
+      font-weight: bold;
+      font-size: var(--sm);
+
+      background-color: var(--text-input-field);
+      color: var(--black);
+    }
+
+    .total__money {
+      margin-left: auto;
+      font-size: var(--lg);
+      color: var(--dark);
+    }
+
+    .primary-button {
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      height: 48px;
+
+      font-size: var(--md);
+      font-weight: bold;
+
+      background-color: var(--hospital-green);
+      color: var(--white);
+
+      cursor: pointer;
+    }
+
+    .checkout-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 640px) {
+      .product-description {
+        width: 100%;
+      }
+
+      .shopping-cart__header {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <aside class="product-description">
+    <div class="shopping-cart__header">
+      <i class="shopping-cart__back-icon"></i>
+      <h2 class="shopping-cart__title">Shopping cart</h2>
+    </div>
+
+    <div class="shopping-cart__items">
+      <div class="item">
+        <img class="item__img" src="https://img.freepik.com/foto-gratis/primer-disparo-flor-morada_181624-25863.jpg"
+          alt="flor">
+        <p class="item__desciption">Flor morada</p>
+        <p class="item__price">$ 120.00</p>
+        <i class="close-icon"></i>
+      </div>
+
+      <div class="item">
+        <img class="item__img" src="https://img.freepik.com/foto-gratis/primer-disparo-flor-morada_181624-25863.jpg"
+          alt="flor">
+        <p class="item__desciption">Flor morada</p>
+        <p class="item__price">$ 120.00</p>
+        <i class="close-icon"></i>
+      </div>
+
+      <div class="item">
+        <img class="item__img" src="https://img.freepik.com/foto-gratis/primer-disparo-flor-morada_181624-25863.jpg"
+          alt="flor">
+        <p class="item__desciption">Flor morada</p>
+        <p class="item__price">$ 120.00</p>
+        <i class="close-icon"></i>
+      </div>
+
+      <div class="item">
+        <img class="item__img" src="https://img.freepik.com/foto-gratis/primer-disparo-flor-morada_181624-25863.jpg"
+          alt="flor">
+        <p class="item__desciption">Flor morada</p>
+        <p class="item__price">$ 120.00</p>
+        <i class="close-icon"></i>
+      </div>
+    </div>
+
+    <p class="shopping-cart__total">
+      Total <span class="total__money">$ 1 200.00</span>
+    </p>
+
+    <button class="primary-button checkout-button" type="button">Checkout</button>
+  </aside>
+</body>
+
+</html>
