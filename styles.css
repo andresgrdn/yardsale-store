@@ -32,6 +32,11 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+ul,
+ol {
+  list-style: none;
+}
+
 a {
   display: block;
 }
@@ -206,10 +211,6 @@ nav a {
   text-transform: uppercase;
 }
 
-.lista {
-  list-style: none;
-}
-
 .mobile-menu__categories li,
 .mobile-menu__orders li {
   margin-bottom: 36px;
@@ -220,7 +221,7 @@ nav a {
   padding-top: 36px;
 }
 
-.lista a {
+.nav-list a {
   margin-bottom: 24px;
 
   font-weight: bold;

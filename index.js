@@ -34,9 +34,11 @@ function toggleMobileMenu() {
 
 function toggleShoppingCart() {
   const isDesktopMenuOpened = !desktopMenu.classList.contains('inactive');
+  const isMobileMenuOpened = !mobileMenu.classList.contains('inactive');
 
-  if (isDesktopMenuOpened) {
+  if (isDesktopMenuOpened || isMobileMenuOpened) {
     desktopMenu.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
   }
 
   shoppingCart.classList.toggle('inactive');

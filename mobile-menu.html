@@ -62,8 +62,17 @@
       text-transform: uppercase;
     }
 
-    .lista {
+    .nav-list {
       list-style: none;
+    }
+
+    .nav-list a {
+      margin-bottom: 24px;
+
+      font-weight: bold;
+
+      text-decoration: none;
+      color: var(--dark);
     }
 
     .mobile-menu__categories li,
@@ -74,15 +83,6 @@
     .mobile-menu__orders {
       border-top: 1px solid var(--very-light-pink);
       padding-top: 36px;
-    }
-
-    .lista a {
-      margin-bottom: 24px;
-
-      font-weight: bold;
-
-      text-decoration: none;
-      color: var(--dark);
     }
 
     .mobile-menu__account li {
@@ -109,7 +109,7 @@
 
       <h1>Categories</h1>
 
-      <ul class="lista mobile-menu__categories">
+      <ul class="nav-list mobile-menu__categories">
         <li><a href="#">All</a></li>
         <li><a href="#">Clothes</a></li>
         <li><a href="#">Electronics</a></li>
@@ -118,14 +118,14 @@
         <li><a href="#">Others</a></li>
       </ul>
 
-      <ul class="lista mobile-menu__orders">
+      <ul class="nav-list mobile-menu__orders">
         <li><a href="#">My orders</a></li>
         <li><a href="#">My account</a></li>
       </ul>
     </div>
 
     <div>
-      <ul class="lista mobile-menu__account">
+      <ul class="nav-list mobile-menu__account">
         <li><a href="#">camilayokoo@gmail.com</a></li>
         <li><a href="#">Sign out</a></li>
       </ul>
