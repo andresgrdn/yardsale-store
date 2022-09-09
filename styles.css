@@ -328,14 +328,15 @@ aside {
 }
 
 .close-icon {
+  --area-size: 40px;
   --icon-size: 12px;
 
   display: block;
 
-  background: no-repeat center/contain url('./assets/icons/close.svg');
+  width: var(--area-size);
+  height: var(--area-size);
 
-  width: var(--icon-size);
-  height: var(--icon-size);
+  background: no-repeat center/var(--icon-size) url('./assets/icons/close.svg');
 
   cursor: pointer;
 }
@@ -391,25 +392,13 @@ aside {
   padding: 0 16px 16px 16px;
 }
 
-.product-details .close-button {
+.close-icon__bubble {
   position: absolute;
-  top: 12px;
-  left: 12px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  top: 16px;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
 
   box-shadow: 0px 0px 8px rgba(128, 128, 128, 0.247);
   background-color: var(--white);
-}
-
-.product-details .close-button:hover {
-  cursor: pointer;
 }
 
 .product-details .image-container {
@@ -495,6 +484,7 @@ aside {
   height: var(--card-size);
 
   object-fit: cover;
+  cursor: pointer;
 }
 
 .controls {

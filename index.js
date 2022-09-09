@@ -6,18 +6,26 @@ const mobileMenuIcon = document.querySelector('.close-icon');
 const shoppingCartButton = document.querySelector('.cart-icon');
 const shoppingCart = document.querySelector('.shopping-cart');
 const cardsContainer = document.querySelector('.cards-container');
+const productDetails = document.querySelector('.product-details');
+const productDetailsCloseIcon = document.querySelector('.close-icon__bubble');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamIcon.addEventListener('click', toggleMobileMenu);
 mobileMenuIcon.addEventListener('click', toggleMobileMenu);
 shoppingCartButton.addEventListener('click', toggleShoppingCart);
+productDetailsCloseIcon.addEventListener('click', closeProductDetails);
 
 
 function toggleDesktopMenu() {
   const isShoppingCartOpened = !shoppingCart.classList.contains('inactive');
+  const isProductDetailsOpened = !productDetails.classList.contains('inactive');
 
   if (isShoppingCartOpened) {
     shoppingCart.classList.add('inactive');
+  }
+
+  if (isProductDetailsOpened) {
+    productDetails.classList.add('inactive');
   }
 
   desktopMenu.classList.toggle('inactive');
@@ -25,9 +33,14 @@ function toggleDesktopMenu() {
 
 function toggleMobileMenu() {
   const isShoppingCartOpened = !shoppingCart.classList.contains('inactive');
+  const isProductDetailsOpened = !productDetails.classList.contains('inactive');
 
   if (isShoppingCartOpened) {
     shoppingCart.classList.add('inactive');
+  }
+
+  if (isProductDetailsOpened) {
+    productDetails.classList.add('inactive');
   }
 
   mobileMenu.classList.toggle('inactive');
@@ -36,13 +49,39 @@ function toggleMobileMenu() {
 function toggleShoppingCart() {
   const isDesktopMenuOpened = !desktopMenu.classList.contains('inactive');
   const isMobileMenuOpened = !mobileMenu.classList.contains('inactive');
+  const isProductDetailsOpened = !productDetails.classList.contains('inactive');
 
   if (isDesktopMenuOpened || isMobileMenuOpened) {
     desktopMenu.classList.add('inactive');
     mobileMenu.classList.add('inactive');
   }
 
+  if (isProductDetailsOpened) {
+    productDetails.classList.add('inactive');
+  }
+
   shoppingCart.classList.toggle('inactive');
+}
+
+function openProductDetails() {
+  const isShoppingCartOpened = !shoppingCart.classList.contains('inactive');
+  const isDesktopMenuOpened = !desktopMenu.classList.contains('inactive');
+  const isMobileMenuOpened = !mobileMenu.classList.contains('inactive');
+
+  if (isShoppingCartOpened) {
+    shoppingCart.classList.add('inactive');
+  }
+
+  if (isDesktopMenuOpened || isMobileMenuOpened) {
+    desktopMenu.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+  }
+
+  productDetails.classList.remove('inactive');
+}
+
+function closeProductDetails() {
+  productDetails.classList.add('inactive');
 }
 
 const productsList = [];
@@ -52,25 +91,21 @@ productsList.push({
   price: 120,
   image: 'https://images.pexels.com/photos/1431117/pexels-photo-1431117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 })
-
 productsList.push({
   name: 'Laptop',
   price: 600,
   image: 'https://images-na.ssl-images-amazon.com/images/I/61Dw5Z8LzJL._SL1000_.jpg',
 })
-
 productsList.push({
   name: 'Table',
   price: 150,
   image: 'https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw04b3c19c/images/600000/606028.jpg?sfrm=jpg',
 })
-
 productsList.push({
   name: 'Table',
   price: 150,
   image: 'https://images.demandware.net/dw/image/v2/BBBV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw04b3c19c/images/600000/606028.jpg?sfrm=jpg',
 })
-
 productsList.push({
   name: 'Table',
   price: 150,
@@ -105,6 +140,7 @@ function renderProducts(arr) {
     const productImage = document.createElement('img');
     productImage.setAttribute('src', product.image);
     productImage.setAttribute('alt', product.name);
+    productImage.addEventListener('click', openProductDetails);
 
     const controls = document.createElement('div');
     controls.classList.add('controls');
